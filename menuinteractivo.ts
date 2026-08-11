@@ -1,14 +1,27 @@
+
+/*
+                   *****************************************************************************MENÚ DE TAREAS*******************************
+                   ********************BY***************************************
+                   ****************DAVID EMANUEL SALINAS DURAN******************
+                   *************************************************************
+
+
+
+
+*/
+
+
 import * as readline from 'node:readline/promises';
 import { stdin as input, stdout as output } from 'node:process';
 
 async function main() {
   const rl = readline.createInterface({ input, output });
 
-  // 2. Arreglo tipado para las tareas
+  // Las tareas
   const tareas: string[] = [];
   let continuar: boolean = true;
 
-  // 4. Menú interactivo con ciclo
+  // Ciclo del Menú interactivo
   while (continuar) {
     console.log('\n--- MENÚ DE TAREAS ---');
     console.log('1. Agregar tarea');
@@ -18,7 +31,7 @@ async function main() {
 
     const opcion = await rl.question('Selecciona una opción: ');
 
-    // 5. Opciones con switch
+    // Opciones del menú con switch
     switch (opcion.trim()) {
       case '1': {
         const nuevaTarea = await rl.question('Ingresa el título de la tarea: ');
